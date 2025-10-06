@@ -57,6 +57,11 @@ def line_callback():
     session['user'] = resp.json()
     return redirect('/')
 
+@app.route('/auth/anonymous')
+def login_anonymous():
+    session['user'] = {'name': 'ผู้ใช้ทั่วไป'}
+    return redirect('/')
+
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 8080))
     app.run(host='0.0.0.0', port=port)
