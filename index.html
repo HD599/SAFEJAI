@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>เมฆของฉัน</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="login-box" id="loginBox">
+    <h2>เข้าสู่ระบบ</h2>
+    <button onclick="loginWithFacebook()">Facebook</button>
+    <button onclick="loginWithLine()">LINE</button>
+  </div>
+
+  <div class="quiz-box" id="quizBox" style="display:none;">
+    <h3>เมฆของฉัน: <span id="cloudName">ยังไม่ตั้งชื่อ</span></h3>
+    <input type="text" placeholder="ตั้งชื่อเมฆของคุณ" oninput="setCloudName(this.value)" />
+    <br><br>
+    <img id="cloudImage" src="public/cloud-gray.png" />
+    <div id="questionBox"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
