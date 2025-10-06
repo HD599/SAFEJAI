@@ -7,20 +7,21 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
 </head>
 <body>
-  <div class="login-box" id="loginBox">
-    <h2>เข้าสู่ระบบ</h2>
-    <button onclick="loginWithFacebook()">Facebook</button>
-    <button onclick="loginWithLine()">LINE</button>
-  </div>
-
-  <div class="quiz-box" id="quizBox" style="display: none;">
-    <h3>เมฆของฉัน: <span id="cloudName">ยังไม่ตั้งชื่อ</span></h3>
-    <input type="text" placeholder="ตั้งชื่อเมฆของคุณ" oninput="setCloudName(this.value)" />
-    <br /><br />
-    <img id="cloudImage" src="{{ url_for('static', filename='image/cloud-gray.jpg') }}" />
-    <div id="questionBox"></div>
-  </div>
-
+  {% if not user %}
+    <div class="login-box">
+      <h2>เข้าสู่ระบบ</h2>
+      <a href="/auth/facebook"><button>Facebook</button></a>
+      <a href="/auth/line"><button>LINE</button></a>
+    </div>
+  {% else %}
+    <div class="quiz-box">
+      <h3>เมฆของฉัน: <span id="cloudName">ยังไม่ตั้งชื่อ</span></h3>
+      <input type="text" placeholder="ตั้งชื่อเมฆของคุณ" oninput="setCloudName(this.value)" />
+      <br /><br />
+      <img id="cloudImage" src="{{ url_for('static', filename='images/cloud-gray.png') }}" />
+      <div id="questionBox"></div>
+    </div>
+  {% endif %}
   <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
