@@ -2,16 +2,6 @@ let score = 0;
 let current = 0;
 const questions = Array.from({ length: 30 }, (_, i) => `คำถามข้อที่ ${i + 1}`);
 
-function loginWithFacebook() {
-  document.getElementById('loginBox').style.display = 'none';
-  document.getElementById('quizBox').style.display = 'block';
-}
-
-function loginWithLine() {
-  document.getElementById('loginBox').style.display = 'none';
-  document.getElementById('quizBox').style.display = 'block';
-}
-
 function setCloudName(name) {
   document.getElementById('cloudName').textContent = name;
 }
@@ -46,7 +36,7 @@ function showResult() {
   else if (score <= 25) color = 'blue';
   else color = 'white';
 
-  document.getElementById('cloudImage').src = `/static/image/cloud-${color}.jpg`;
+  document.getElementById('cloudImage').src = `/static/images/cloud-${color}.png`;
   document.getElementById('questionBox').innerHTML = `<h4>เมฆของคุณคือสี ${color}</h4>`;
 }
 
