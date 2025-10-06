@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>เมฆของฉัน</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SAFEJAI - เมฆของฉัน</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
 </head>
 <body>
   <div class="login-box" id="loginBox">
@@ -14,14 +13,14 @@
     <button onclick="loginWithLine()">LINE</button>
   </div>
 
-  <div class="quiz-box" id="quizBox" style="display:none;">
+  <div class="quiz-box" id="quizBox" style="display: none;">
     <h3>เมฆของฉัน: <span id="cloudName">ยังไม่ตั้งชื่อ</span></h3>
     <input type="text" placeholder="ตั้งชื่อเมฆของคุณ" oninput="setCloudName(this.value)" />
-    <br><br>
-    <img id="cloudImage" src="public/cloud-gray.jpg" />
+    <br /><br />
+    <img id="cloudImage" src="{{ url_for('static', filename='images/cloud-gray.jpg') }}" />
     <div id="questionBox"></div>
   </div>
 
-  <script src="script.js"></script>
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
