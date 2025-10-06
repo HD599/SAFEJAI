@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+import os
 
 app = Flask(__name__)
 
@@ -6,4 +7,6 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-# ไม่ต้องมี app.run() ถ้าใช้ Gunicorn
+if __name__ == '__main__':
+    port = int(os.environ.get("PORT", 8080))
+    app.run(host='0.0.0.0', port=port)
