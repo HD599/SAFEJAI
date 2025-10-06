@@ -46,7 +46,7 @@ function showResult() {
   else if (score <= 25) color = 'blue';
   else color = 'white';
 
-  document.getElementById('cloudImage').src = `public/cloud-${color}.png`;
+  document.getElementById('cloudImage').src = `public/cloud-${color}.jpg`;
   document.getElementById('questionBox').innerHTML = `<h4>เมฆของคุณคือสี ${color}</h4>`;
 }
 
