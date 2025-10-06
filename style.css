@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: url('public/bg-default.jpg') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-box, .quiz-box {
+  background: rgba(255,255,255,0.9);
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+#cloudImage {
+  width: 300px;
+  transition: filter 0.5s ease;
+}
